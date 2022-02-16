@@ -7,10 +7,6 @@ import { Camera } from './actors/Camera.js';
 import { OutOfBounds } from './actors/OutOfBounds.js';
 
 import { CirclePawn } from './actors/CirclePawn.js';
-import { CapsulePawn } from './actors/CapsulePawn.js';
-import { WallPawn } from './actors/WallPawn.js';
-import { BoxPawn } from './actors/BoxPawn.js';
-import { PlatformerPawn } from './actors/PlatformerPawn.js';
 
 import { EnemyPawn } from './actors/EnemyPawn.js';
 
@@ -22,8 +18,6 @@ import { Crate } from './actors/Crate.js';
 import { Sausage } from './actors/Sausage.js';
 import { Spinner } from './actors/Spinner.js';
 
-import { UnitSquare } from './actors/UnitSquare.js';
-
 import { getRandomIntInclusive } from './core/utility/random.js';
 
 export const scene = new Scene;
@@ -31,15 +25,10 @@ export const scene = new Scene;
 // Create a controller that converts player input to commands
 const playerController = new PlayerController({
   behaviours: ['mover', 'shooter']
-  // behaviours: ['steerer', 'shooter']
 });
 
 // Create a character that responds to commands
 const playerPawn = new CirclePawn({ scale: 1 });
-// const playerPawn = new CapsulePawn({ scale: 1, renderDirection: true })
-// const playerPawn = new WallPawn({ scale: 1 }); // This glitches on collision for some reason, but only when player controlled
-// const playerPawn = new BoxPawn({ scale: 1 });
-// const playerPawn = new PlatformerPawn({ scale: 1 });
 
 // Create a camera that determines where to render
 const camera = new Camera({
@@ -51,12 +40,6 @@ const camera = new Camera({
     width: 200,
     height: 200
   },
-  // deadzone: {
-  //   width: 20,
-  //   height: 20
-  // },
-  // rotationDeadzone: 0.1,
-  // followEntityRotation: true
 });
 
 // Link the character and camera to the controller
@@ -210,27 +193,6 @@ for (let i = 0; i < 30; i++) {
   enemies.push(enemyController, enemyPawn);
 }
 
-// const wall = new Wall({
-//   position: {
-//     x: 0,
-//     y: -128
-//   },
-//   rotation: Math.PI / 2,
-//   length: 128
-// })
-
-// const box = new Box({
-//   position: { x: -128, y: 0 },
-// });
-
-// const rock = new Rock({
-//   position: { x: 128, y: 0 },
-// });
-
-// const spinner = new Spinner({
-//   position: { x: 0, y: 128 }
-// })
-
 
 // Add everything into the scene
 scene.addEntity(outOfBounds);
@@ -238,17 +200,8 @@ scene.addEntities(room);
 scene.addEntity(camera);
 scene.addEntity(playerController);
 scene.addEntity(playerPawn);
-// scene.addEntity(unitSquare);
 
-// scene.addEntity(enemyController);
-// scene.addEntity(enemyPawn);
-
-// scene.addEntities(enemies);
-
-// scene.addEntity(spinner);
-// scene.addEntity(rock);
-// scene.addEntity(box);
-// scene.addEntity(wall);
+scene.addEntities(enemies);
 
 scene.addEntities(spinners);
 scene.addEntities(rocks);
