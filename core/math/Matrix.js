@@ -84,6 +84,15 @@ class TFMatrix2D {
   release() {
     tfMatrix2DPool.push(this);
   }
+  
+  clone(matrix2D) {
+    this.data[0] = matrix2D.data[0];
+    this.data[1] = matrix2D.data[1];
+    this.data[2] = matrix2D.data[2];
+    this.data[3] = matrix2D.data[3];
+    this.data[4] = matrix2D.data[4];
+    this.data[5] = matrix2D.data[5];
+  }
 
   multiplyVector(vector) {
     return multiplyMatrix2DAndVector2(this, vector);
@@ -140,7 +149,7 @@ export class TFMatrix2 {
 
 // Init static memory pools
 const tfMatrix2DPool = [];
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 100; i++) {
   tfMatrix2DPool.push(new TFMatrix2D());
 }
 
