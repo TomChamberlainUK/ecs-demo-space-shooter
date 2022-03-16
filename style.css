@@ -46,7 +46,7 @@ body {
   position: relative;
   box-sizing: border-box;
   max-height: calc(100% - 7.5rem);
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: inherit;
 }
 
