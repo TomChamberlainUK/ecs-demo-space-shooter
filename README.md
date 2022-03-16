@@ -1,4 +1,6 @@
-# *As Yet Untitled* - An ECS Game Engine
+# ECS Engine Space Shooter Demo 🚀
+
+> Try it out [here!](https://tomchamberlainuk.github.io/ecs-demo-space-shooter/) Please note that this is just a demo and is lacking a lot of core functionality, including tracking your score and respawning. For now to respawn just refresh the page.
 
 ## A 2D Game Engine for JavaScript
 
