@@ -7,6 +7,29 @@
   <title>ECS Engine</title>
 </head>
 <body>
+  <div class="overlay" id="js-overlay">
+    <div class="overlay__textBox">
+      <h1 class="overlay__title">🚀 ECS Space Shooter Demo</h1>
+      <div class="overlay__scrollArea">
+        <h2 class="overlay__heading">👋 Welcome!</h2>
+        <p class="overlay__paragraph">This is a simple demo of a game engine that I'm working on. Check out my <a class="overlay__link" href="https://github.com/TomChamberlainUK" target="_blank" rel="noopener noreferrer">Github</a> to follow its progress as well as my other projects.</p>
+        <p class="overlay__paragraph">Shoot at enemy ships, collect coins, and dodge projectiles — Careful, it's pretty tricky!</p>
+        <h2 class="overlay__heading">🕹 Controls</h2>
+        <p class="overlay__paragraph">Movement: Arrow Keys | WASD</p>
+        <p class="overlay__paragraph">Boost: Shift</p>
+        <p class="overlay__paragraph">Aim: Mouse</p>
+        <p class="overlay__paragraph">Shoot: Left Mouse Button</p>
+        <p class="overlay__paragraph">Respawn: You can't... at least not yet, just refresh for now <i>(sorry!)</i></p>
+        <h2 class="overlay__heading">⚙️ The Engine</h2>
+        <p class="overlay__paragraph">This has all been built from scratch in pure vanilla Javascript <i>(and a little HTML and CSS)</i>. That's it. No libraries, frameworks, or fancy build tools — just good old fashioned JS, a little maths, and a whole lot of elbow grease.</p>
+        <p class="overlay__paragraph">I'm currently in the process of converting this into a full-fledged game engine framework for the web. My plans are to support both 2D and 3D, with multiple renderers — including the current standard Canvas API and WebGL.</p>
+        <p class="overlay__paragraph">So far I've built a fairly simple <a class="overlay__link" href="https://tomchamberlainuk.github.io/three-scene-editor/" target="_blank" rel="noopener noreferrer">Scene Editor</a> where you can manipulate some simple 3D objects, as well as a <a class="overlay__link" href="https://tomchamberlainuk.github.io/three-material-viewer/" target="_blank" rel="noopener noreferrer">Material Viewer</a> that showcases the graphical capabilities of WebGL. Careful with the material viewer, it's loading 2K/4K textures and is a little tedious to load. Avoid loading it on devices with limited bandwidth.</p>
+        <hr class="overlay__seperator">
+        <p class="overlay__note">Please note that this is a work in progress and a demonstration of my game engine more than anything. Currently there is no scoring system or ability to respawn. You'll have to refresh the page if your ship gets destroyed!</p>
+      </div>
+      <button class="overlay__startButton" id="js-startButton">Start!</button>
+    </div>
+  </div>
   <canvas id="canvas"></canvas>
   <script type="module" src="main.js"></script>
 </body>

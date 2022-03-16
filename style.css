@@ -13,3 +13,87 @@ body {
   height: 100%;
   cursor: none;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3rem 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+
+.overlay--hidden {
+  display: none;
+}
+
+.overlay__textBox {
+  max-width: 30rem;
+  height: 100%;
+  overflow: hidden;
+  line-height: 150%;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  color: white;
+  background-color: inherit;
+}
+
+.overlay__scrollArea {
+  position: relative;
+  box-sizing: border-box;
+  max-height: calc(100% - 7.5rem);
+  overflow: scroll;
+  background-color: inherit;
+}
+
+.overlay__scrollArea::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: yellow;
+}
+
+.overlay__title {
+  color: rgba(255, 255, 255, 1);
+}
+
+.overlay__heading {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.overlay__paragraph {
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.overlay__note {
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 0.75rem;
+}
+
+.overlay__link {
+  color: rgba(255, 255, 255, 1);
+}
+
+.overlay__seperator {
+  border: none;
+  height: 0.0625rem;
+  background-color: rgba(255, 255, 255, 0.38);
+}
+
+.overlay__startButton {
+  display: block;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  height: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
