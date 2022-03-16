@@ -65,28 +65,28 @@ window.addEventListener('keydown', e => pressedKeys[e.keyCode] = true);
 window.addEventListener('keyup', e => pressedKeys[e.keyCode] = false);
 
 // Catch clicks
-window.addEventListener('mousedown', e => {
+Game.canvas.addEventListener('mousedown', e => {
   if (e.button === 0) mouse.leftClick = true;
   if (e.button === 1) mouse.middleClick = true;
   if (e.button === 2) mouse.rightClick = true;
 });
-window.addEventListener('mouseup', e => {
+Game.canvas.addEventListener('mouseup', e => {
   if (e.button === 0) mouse.leftClick = false;
   if (e.button === 1) mouse.middleClick = false;
   if (e.button === 2) mouse.rightClick = false;
 });
 
 // Prevent right click context menu
-window.addEventListener('contextmenu', e => e.preventDefault());
+Game.canvas.addEventListener('contextmenu', e => e.preventDefault());
 
 // Catch mouse movement
-window.addEventListener('mousemove', e => {
+Game.canvas.addEventListener('mousemove', e => {
   mouse.position.x = e.clientX;
   mouse.position.y = e.clientY;
 });
 
 // Catch mouse wheel scroll
-window.addEventListener('wheel', e => {
+Game.canvas.addEventListener('wheel', e => {
   mouse.scroll -= e.deltaY / 100;
   mouse.scroll = Math.min(Math.max(mouse.scroll, 0.5), 5);
 });
